@@ -5,4 +5,14 @@
   <div class="img-banner">
     foto Harry
   </div>
+
+    <br>
+
+  <div class="container">
+    <% @characters.each do |character| %>
+
+      <%= character.image_url %>
+      <%= link_to "Ver más", character_index_path %>
+    <% end %>
+  </div>
 </div>

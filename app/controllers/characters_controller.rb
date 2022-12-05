@@ -7,7 +7,6 @@ class CharactersController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -21,4 +20,6 @@ class CharactersController < ApplicationController
 
   def destroy
   end
+
+  # private
 end
