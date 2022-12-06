@@ -1,2 +1,16 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<div>
+  <div class="img-banner">
+    <%= image_tag "apphpotter2.jpg", alt:"harry-potter-banner", class:"d-block w-100 link-a"%>
+  </div>
+  <div class="container pt-5">
+    <div class="card-product">
+      <%#= image_tag @character.image_url, alt:"Characters", class:""%>
+      <div class="card-product-infos">
+        <h3>Actor/Actress: <strong><%#= @character.actor %></strong></h3> <br>
+        <h1>Name: <%#= @character.name %> </h1> <br>
+        <h2>Review: <%#= @character.review %> </h2> <br>
+        <%= link_to "Regresar", characters_path %> <br><br>
+      </div>
+    </div> <br><br>
+  </div>
+</div>

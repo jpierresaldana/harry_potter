@@ -1,14 +1,20 @@
 <div>
   <div class="img-banner">
-    <%= image_tag "apphpotter2.jpg", alt:"harry-potter-banner", class:"d-block w-100 h-75 link-a"%>
+    <%= image_tag "apphpotter2.jpg", alt:"harry-potter-banner", class:"d-block w-100 link-a"%>
   </div>
 
-    <br>
+  <div class="container align-items-center py-5">
+    <div class="d-flex align-self-center align-items-center">
+      <% @characters.sample(3).each do |character| %>
+        <div class="rounded mx-auto d-block">
+          <%= image_tag character.image_url, alt:"Characters", class:"w-50"%>
+          <%= link_to "Ver más", characters_path %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
-  <div class="container">
-    <% @characters.sample(3).each do |character| %>
-      <%= image_tag character.image_url, alt:"Characters", class:"d-block w-25 link-a"%>
-      <%= link_to "Ver más", characters_path %> <br><br>
-    <% end %>
+  <div class="img-banner">
+    <%= image_tag "varita.jpg", alt:"harry-potter-footer", class:"w-100"%>
   </div>
 </div>

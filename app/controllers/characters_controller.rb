@@ -1,4 +1,6 @@
 class CharactersController < ApplicationController
+  before_action :set_character, only: %w[show edit update destroy]
+
   def index
     @characters = Character.all
   end
@@ -21,5 +23,9 @@ class CharactersController < ApplicationController
   def destroy
   end
 
-  # private
+  private
+
+  def set_character
+    @product = Character.find(params[:id])
+  end
 end

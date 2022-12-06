@@ -1,9 +1,18 @@
 <div>
   <div class="container">
+    <div>
+      <h1 class="text-center py-5 pb-5">Personajes de Harry Potter</h1>
+    </div>
     <% @characters.each do |character| %>
-      <%= image_tag character.image_url, alt:"Characters", class:"d-block w-25 link-a"%>
-      <%= character.name %>
-      <%= link_to "Ver más", character_path(character.id) %> <br><br>
+    <div class="card-product">
+      <%= image_tag character.image_url, alt:"Characters", class:""%>
+      <div class="card-product-infos">
+        <h3>Actor/Actress: <strong><%= character.actor %></strong></h3> <br>
+        <h1>Name: <%= character.name %> </h1> <br>
+        <h2>Review: <%= character.review %> </h2> <br>
+        <%= link_to "Ver más", character_path(character.id) %> <br><br>
+      </div>
+    </div> <br><br>
     <% end %>
   </div>
 </div>
