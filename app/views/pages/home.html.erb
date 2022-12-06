@@ -1,18 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
 <div>
   <div class="img-banner">
-    foto Harry
+    <%= image_tag "apphpotter2.jpg", alt:"harry-potter-banner", class:"d-block w-100 h-75 link-a"%>
   </div>
 
     <br>
 
   <div class="container">
-    <% @characters.each do |character| %>
-
-      <%= character.image_url %>
-      <%= link_to "Ver más", character_index_path %>
+    <% @characters.sample(3).each do |character| %>
+      <%= image_tag character.image_url, alt:"Characters", class:"d-block w-25 link-a"%>
+      <%= link_to "Ver más", characters_path %> <br><br>
     <% end %>
   </div>
 </div>
