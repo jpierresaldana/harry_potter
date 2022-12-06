@@ -9,9 +9,18 @@ class CharactersController < ApplicationController
   end
 
   def new
+    @character = Character.new
   end
 
   def create
+    @character = Character.new(characters_params)
+    if @character.save
+      redirect_to character_path(@character)
+      flash[:notice] = "Personaje creada con éxito"
+    else
+      render :new, status: :unprocessable_entity
+      flash[:notice] = "ERROR - Revise los datos a registrar para crear el Personaje"
+    end
   end
 
   def edit
@@ -26,6 +35,10 @@ class CharactersController < ApplicationController
   private
 
   def set_character
-    @product = Character.find(params[:id])
+    @character = Character.find(params[:id])
+  end
+
+  def characters_params
+    params.require(:character).permit(:name, :review, :actor, :image_url)
   end
 end

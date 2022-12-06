@@ -1,18 +1,22 @@
 <div>
   <div class="container">
-    <div>
-      <h1 class="text-center py-5 pb-5">Personajes de Harry Potter</h1>
-    </div>
-    <% @characters.each do |character| %>
-    <div class="card-product">
-      <%= image_tag character.image_url, alt:"Characters", class:""%>
-      <div class="card-product-infos">
-        <h3>Actor/Actress: <strong><%= character.actor %></strong></h3> <br>
-        <h1>Name: <%= character.name %> </h1> <br>
-        <h2>Review: <%= character.review %> </h2> <br>
-        <%= link_to "Ver más", character_path(character.id) %> <br><br>
+    <div class="container">
+      <h1 class="text-center py-5 pb-3">Personajes de Harry Potter</h1>
+      <div class="d-flex justify-content-center">
+        <%= link_to "Agregar personaje", new_character_path, class:"btn btn-ghost" %>
       </div>
-    </div> <br><br>
-    <% end %>
+    </div>
+    <br><br>
+    <div>
+      <% @characters.each do |character| %>
+      <div class="card-product">
+        <%= image_tag character.image_url, alt:"Characters", class:""%>
+        <div class="card-product-infos">
+          <h1>Name: <%= character.name %> </h1> <br>
+          <%= link_to "Ver más", character_path(character.id) %> <br><br>
+        </div>
+      </div> <br><br>
+      <% end %>
+    </div>
   </div>
 </div>
