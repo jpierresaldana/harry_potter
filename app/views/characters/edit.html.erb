@@ -1,2 +1,33 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<div class="container py-5">
+
+        <div class="row">
+          <div class="col-6">
+          <h1 class="text-center rounded pt-4 pb-4"><strong> Editar personaje </strong></h1>
+            <%= simple_form_for (@character) do |f| %>
+            <div class="row">
+              <div class="col-12 col-lg-6">
+                <%= f.input :name, label: "Nombre del Producto:", placeholder: "Nombre del producto", required: true %>
+              </div>
+              <div class="col-12 col-lg-6 ">
+                <%= f.input :actor, label: "Nombre del Producto:", placeholder: "Nombre del producto", required: true %>
+              </div>
+            </div>
+            <div>
+              <%= f.input :review, label: "Descripción del Producto:", placeholder: "Descripcion del producto", required: true %>
+            </div>
+            <div>
+              <%= f.input :photos, label: "Imagen a cargar", as: :file, input_html: { multiple: true }, required: true %>
+            </div>
+            <div class="d-flex justify-content-around pt-3 pb-5">
+              <%= f.submit "Enviar", class: "btn btn-ghost pb-3" %>
+              <%= link_to "Salir", characters_path, class: "btn btn-ghost" %>
+            </div>
+            <% end %>
+          </div>
+          <div class="col-6">
+            <div>
+              <%#= image_tag "planeta.png", class:"imagen-pro-new" %>
+            </div>
+          </div>
+        </div>
+</div>

@@ -27,9 +27,15 @@ class CharactersController < ApplicationController
   end
 
   def update
+    @character.update!(characters_params)
+    redirect_to character_path(@character)
+    flash[:notice] = "Personaje actualizado con éxito"
   end
 
   def destroy
+    @character.destroy
+    redirect_to characters_path, status: :see_other
+    flash[:notice] = "Personaje eliminado con éxito"
   end
 
   private
